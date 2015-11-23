@@ -1,0 +1,85 @@
+@import "bootstrap";
+
+html {
+overflow-y: scroll;
+}
+body {
+padding-top: 0px;
+}
+section {
+overflow: auto;
+}
+textarea {
+resize: vertical;
+}
+.center {
+text-align: center;
+}
+.center h1 {
+margin-bottom: 10px;
+}
+
+#logo a{
+	width: 260px;
+  height: 60px;
+  margin: 10px 0 0 0;
+  position: absolute;
+  background: url(logo.jpg) no-repeat;
+  display: block;
+}
+
+header {
+    width: 1000px;
+    margin: auto;
+    height: 80px;
+    position: relative;
+    overflow: hidden;
+}
+nav {
+	float: right;
+  width: 100%;
+  margin: 35px 50px 0 0;
+  text-align: right;
+	
+}
+
+nav a {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;		
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+
+.topnav a {
+    margin: 0 15px;
+    padding: 0 8px;
+    text-decoration:none;
+
+}
+
+.banner {
+	width: 100%;
+	background: url(banner.jpg) top center;
+	height: 265px;
+}
+
+.circle {
+	float: left;
+	margin: 60px 0 0 150px;
+  width: 130px;
+  height: 130px;   
+  border-radius: 100%;
+  overflow: hidden;
+  border: #FFF 4px solid;
+  
+}
+.circle a {
+	display: block;
+	width: 160px;
+	text-decoration:none;
+	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+	padding-top:97px;
+	padding-left:25px;
+	background: url(circle.jpg) no-repeat;
+  background-size: 130px 130px;
+}

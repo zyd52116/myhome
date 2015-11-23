@@ -1,0 +1,10 @@
+<header>
+			  <div id="logo"><a href="/"></a></div>
+				<nav class="topnav" id="topnav">				
+						<a href="/"><span>首 页</sapn></a>
+						<a href= "article" ><span>文 章</span></a>
+						<a href="/photo"><span>相 册</span></a>
+						<a href="/msgboard"><span>留 言</span></a>
+						<a href="/about"><span>关 于</span></a>
+				</nav>
+</header>

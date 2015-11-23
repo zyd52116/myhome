@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			myhome
+		</title>
+	</head>
+	
+	<body>
+		
+		<div class="banner">
+			<div class="circle"><a href="/static_pages/about">Genkin_He</a></div>
+		</div>
+	</body>
+</html>	
+
