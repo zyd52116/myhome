@@ -11,6 +11,4 @@ class StaticPagesController < ApplicationController
 	def photo
 	end
 
-	def article
-  end
 end

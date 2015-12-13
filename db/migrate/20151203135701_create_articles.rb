@@ -1,10 +1,10 @@
 class CreateArticles < ActiveRecord::Migration
   def change
     create_table :articles do |t|
-      t.string :content
+      t.string :title
+      t.text :content
 
-      t.timestamps
+      t.timestamps null: false
     end
-    add_index :articles,[:created_at]
   end
 end

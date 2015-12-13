@@ -55,10 +55,6 @@ nav a {
     padding: 0 8px;
     text-decoration:none;
 
-a:visited {
-	background-color:pink;
-}
-
 }
 
 .banner {
@@ -82,7 +78,7 @@ a:visited {
 	width: 160px;
 	text-decoration:none;
 	font-family: "微软雅黑", Arial, Helvetica, sans-serif;
-	padding-top:97px;
+	padding-top:120px;
 	padding-left:25px;
 	background: url(circle.jpg) no-repeat;
   background-size: 130px 130px;

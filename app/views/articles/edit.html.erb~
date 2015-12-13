@@ -1,0 +1,13 @@
+<%= form_for @article , url: article_path(@articles) do |f| %>
+	<%= f.label :title, "文章标题"%>
+	<div>
+		 <%= f.text_field :title %>
+	</div>
+	<%= f.label :content, "文章内容" %>
+	<div>
+		<%= f.text_area :content %>
+	</div>
+	
+	<%= f.submit "更新"%>
+<% end %>
+	

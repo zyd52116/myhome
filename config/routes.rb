@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-	
-	match '/',        to: 'static_pages#home',    via: 'get'
-	match '/article', to: 'static_pages#article', via: 'get'
+	resources :articles
+
 	match '/photo',   to: 'static_pages#photo',   via: 'get'
 	match '/msgboard',to: 'static_pages#msgboard',via: 'get'
 	match '/about',   to: 'static_pages#about',   via: 'get'
