@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 	before_action :signed_in_user , only: [:new,:edit,:update,:create,:destroy]
 	def index
-		@articles = Article.all
+		@articles = Article.order(created_at: :desc)
 	end
 		
 	def show
@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
 	def update
 		@article = Article.find(params[:id])
 		@article.update(params_article)
-		redirect_to articles_path
+		redirect_to article_path
 	end
 	
 	def create
@@ -45,4 +45,46 @@ class ArticlesController < ApplicationController
 	def signed_in_user
   	redirect_to new_admin_session_path unless signed_in?
   end
+  
+  #支持markdown
+	 # Prevent CSRF attacks by raising an exception.
+ # For APIs, you may want to use :null_session instead.
+ protect_from_forgery with: :exception
+
+ helper_method [:markdown]
+
+ # Highlight code with Pygments
+ class HTMLwithPygments < Redcarpet::Render::HTML
+  def block_code(code, language)
+   language = "text" if language.blank?
+   sha = Digest::SHA1.hexdigest(code)
+   Rails.cache.fetch ["code", language, sha].join("-") do
+    Pygments.highlight(code, :lexer => language)
+   end
+  end
+ end
+
+ protected
+
+ # Markdown with Redcarpet
+ def markdown(text)
+  renderer = HTMLwithPygments.new({
+   :filter_html => true,
+   :hard_wrap => true,
+   :link_attributes => {:rel => 'external nofollow'}
+  })
+
+  options = {
+   :autolink => true,
+   :no_intra_emphasis => true,
+   :fenced_code_blocks => true,
+   :lax_html_blocks => true,
+   :strikethrough => true,
+   :superscript => true,
+   :tables => true
+  }
+
+  Redcarpet::Markdown.new(renderer, options).render(text).html_safe
+ end
+
 end

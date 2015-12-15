@@ -28,13 +28,15 @@ gem 'therubyracer'
 
 #bootstrap
 gem 'bootstrap-sass','3.3.5.1'
-
+#支持markdown编辑器
+gem 'redcarpet'
+gem 'pygments.rb'
 #用户密码加密
 gem 'bcrypt-ruby'
 gem 'bcrypt'
 #部署到Heroku
 group :production do
-gem 'pg', '0.15.1'
+gem 'pg'
 end
 
 # Use ActiveModel has_secure_password

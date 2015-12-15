@@ -1,13 +1,18 @@
-<%= form_for @article , url: article_path(@articles) do |f| %>
-	<%= f.label :title, "文章标题"%>
-	<div>
-		 <%= f.text_field :title %>
-	</div>
-	<%= f.label :content, "文章内容" %>
-	<div>
-		<%= f.text_area :content %>
-	</div>
+<div class="row">
+<div class = "col-md-2"></div>
+<div class= "col-md-8">
+<%= form_for @article , url: article_path(@article) do |f| %>
 	
-	<%= f.submit "更新"%>
+	<%= f.label :title, "文章标题" ,class: "label label-default"%>
+	
+	<%= f.text_field :title , class: "form-control" %>
+	
+	<%= f.label :content, "文章内容" ,class: "control-label"%>
+	
+	<%= f.text_area :content ,class: "form-control",rows:"13"%>
+	
+	</br>
+	<%= f.submit "更 新",class: "btn-primary btn btn-default"%>
+	</div>
 <% end %>
-	
+</div>

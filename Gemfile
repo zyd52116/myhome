@@ -28,7 +28,9 @@ gem 'therubyracer'
 
 #bootstrap
 gem 'bootstrap-sass','3.3.5.1'
-
+#支持markdown编辑器
+gem 'redcarpet'
+gem 'pygments.rb'
 #用户密码加密
 gem 'bcrypt-ruby'
 gem 'bcrypt'
