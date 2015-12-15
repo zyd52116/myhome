@@ -32,6 +32,10 @@ gem 'bootstrap-sass','3.3.5.1'
 #用户密码加密
 gem 'bcrypt-ruby'
 gem 'bcrypt'
+#部署到Heroku
+group :production do
+gem 'pg'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
