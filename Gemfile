@@ -29,8 +29,9 @@ gem 'therubyracer'
 #bootstrap
 gem 'bootstrap-sass','3.3.5.1'
 
-#后台登录
-
+#用户密码加密
+gem 'bcrypt-ruby'
+gem 'bcrypt'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

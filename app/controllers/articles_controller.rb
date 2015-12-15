@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+	before_action :signed_in_user , only: [:new,:edit,:update,:create,:destroy]
 	def index
 		@articles = Article.all
 	end
@@ -40,4 +41,8 @@ class ArticlesController < ApplicationController
 	def params_article
 		params.require(:article).permit(:title,:content)
 	end
+	
+	def signed_in_user
+  	redirect_to new_admin_session_path unless signed_in?
+  end
 end

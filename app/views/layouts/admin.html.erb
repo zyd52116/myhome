@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Genkin's Blog</title>
-  <link rel="shortcut icon" href="/favicon.ico"/>
-  <link rel="bookmark" href="/favicon.ico"/>
+	
+  <title>Myhome</title>
+  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
-<%= render 'layouts/header' %>
+
 <%= yield %>
-<%= render 'layouts/footer'%>
+
 </body>
 </html>
