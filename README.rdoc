@@ -1,7 +1,7 @@
 == README
 
 This is a Blog by Genkin_he.
-I desiged it after i learn the ruby on rails tutorial .
+I desiged it after i learned the ruby on rails tutorial .
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
