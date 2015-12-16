@@ -5,6 +5,7 @@
 <%= markdown @article.content %>
 <% if signed_in? %>
 <%= link_to "修改文章", edit_article_path ,class: "btn-sm btn-primary " %>
+<%= link_to "删除文章", article_path,method: "delete", class: "btn-sm btn-primary "%>
 
 <% end %>
 </div>

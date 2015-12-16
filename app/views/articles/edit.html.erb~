@@ -3,7 +3,7 @@
 <div class= "col-md-8">
 <%= form_for @article , url: article_path(@article) do |f| %>
 	
-	<%= f.label :title, "文章标题" ,class: "label label-default"%>
+	<%= f.label :title, "文章标题" ,class: "control-label"%>
 	
 	<%= f.text_field :title , class: "form-control" %>
 	
