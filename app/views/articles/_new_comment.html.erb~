@@ -1,0 +1,7 @@
+<%= form_for @comment do |f| %>
+	<%= f.text_area :content ,class: "form-control",rows:"3",placeholder: "请输入评论内容"%>
+	<%= f.text_field :email ,class: "form-control",placeholder: "请输入你的邮箱地址"%>
+	</br>
+	<%= f.text_field :article_id,type:"hidden" ,value:@article.id%>
+	<%= f.submit "发表评论" %>
+<% end %>

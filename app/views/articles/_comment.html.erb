@@ -1,0 +1,10 @@
+
+<% @article.comments.each do |f|%>
+	<section class="caption">	
+	<h4><%= f.id%>楼	<%= f.email %></h4>
+	<h4> <%= f.content %></h4>
+	<% if signed_in? %><%= link_to "删除该评论", comment_path,method: "delete", class: "btn-sm btn-primary "%>
+	<% end %>
+	<% end %>
+	</section>
+

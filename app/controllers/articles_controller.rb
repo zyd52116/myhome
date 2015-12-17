@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
 		
 	def show
 		@article = Article.find(params[:id])
+		@comment = @article.comments.build
 	end 
 	
 	def new
@@ -42,6 +43,7 @@ class ArticlesController < ApplicationController
 	def params_article
 		params.require(:article).permit(:title,:content)
 	end
+	
 	
 	def signed_in_user
   	redirect_to new_admin_session_path unless signed_in?

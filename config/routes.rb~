@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 	root 'static_pages#home'
 	
 	namespace :admin do
-		resources :sessions, :only: [:new, :create, :destroy]
+		resources :sessions, only: [:new, :create, :destroy]
 		root 'dashboard#index'
 		match '/signout', to: 'sessions#destroy',   via: 'delete'
 		

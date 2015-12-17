@@ -15,6 +15,7 @@ module SessionsHelper
 		@current_user = user
 	end
 	
+	
 	def current_user                    #返回当前登录的用户
 		remember_token = User.encrypt(cookies[:remember_token])
 		@current_user ||= User.find_by(remember_token: remember_token)
