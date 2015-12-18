@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+	before_action :signed_in_user ,only: [:destroy]
 	def create
 		@comment = Comment.create(comment_params)
 		 if @comment.save
