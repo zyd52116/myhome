@@ -1,15 +1,17 @@
-
 <% @article.comments.each do |f|%>
-	<div class="col-md-12">	
-		<h4>	<%= f.email %> </h4>
-		<div>
-		<h5> <%= f.content %> </h5>
-			<% if signed_in? %>
-				<%= link_to "删除该评论", f,method: :delete, class: "btn-sm btn-primary"%>
-			<% end %>
+	<% if signed_in? %>
+		<div class="col-md-11">		
+			<h5 > <%= f.content %> </h5>
+			<h4 class="page-header">	<%= f.email %> </h4>
 		</div>
-	</div>
+			<%= link_to "删除评论", f,method: :delete, class: "col-md-1 btn-sm btn-primary "%>
+	<% else %>
+		<div class="col-md-12">		
+			<h5 > <%= f.content %> </h5>
+			<h4 class="page-header">	<%= f.email %> </h4>
+		</div>
 	<% end %>
+<% end %>
 
 	
 

@@ -6,8 +6,7 @@ class ArticlesController < ApplicationController
 		
 	def show
 		@article = Article.find(params[:id])
-		@comment = @article.comments.build
-		@comments = Comment.find_by(article_id: @article.id)
+		@comment = Comment.create
 	end 
 	
 	def new
