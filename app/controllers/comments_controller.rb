@@ -9,11 +9,12 @@ class CommentsController < ApplicationController
 	end
 	
 	def destroy
-		@comment = Coment.find(params[:id])
-		if @comment.destoy
+		@comment = Comment.find(params[:id])
+		if @comment.destroy
 			redirect_to articles_path
 		else
 			redirect_to articles_path
+		end
 	end
 	private 
 	def comment_params
