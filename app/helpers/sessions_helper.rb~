@@ -15,12 +15,6 @@ module SessionsHelper
 		@current_user = user
 	end
 	
-	def current_article=(article)
-		@current_article = article
-	end
-	def current_article
-		@current_article
-	end
 	
 	def current_user                    #返回当前登录的用户
 		remember_token = User.encrypt(cookies[:remember_token])
@@ -35,5 +29,9 @@ module SessionsHelper
 		self.current_user = nil
 		cookies.delete(:remember_token)
 	end
+	
+	def signed_in_user
+  	redirect_to new_admin_session_path unless signed_in?
+  end
 	
 end

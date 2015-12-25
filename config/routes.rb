@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 	resources :articles
 	resources :comments
 	resources :msgboards
+	resources :photos
 	match '/photo',   to: 'static_pages#photo',   via: 'get'
 	match '/msgboard',to: 'static_pages#msgboard',via: 'get'
 	match '/about',   to: 'static_pages#about',   via: 'get'
