@@ -9,7 +9,7 @@ before_action :signed_in_user ,only: [:destroy,:new,:create]
 	end 
 	
 	def show
-		@photo = Photo.find_by(params[:id])
+		@photo = Photo.find(params[:id])
 	end
 	
 	def create
@@ -22,7 +22,7 @@ before_action :signed_in_user ,only: [:destroy,:new,:create]
 	end
 	
 	def destroy
-		@photo = Photo.find_by(params[:id])
+		@photo = Photo.find(params[:id])
 		if @photo.destroy
 			redirect_to photos_path
 		else
