@@ -1,5 +1,4 @@
 <div class="row">
-
 <div class="col-md-2 col-md-offset-10">
 	<% if signed_in? %>
 	<%= link_to "新建文章", new_article_path ,class: "btn btn-primary " %>
@@ -9,13 +8,16 @@
 <div class="row">
 
 <div class="col-md-8 col-md-offset-2">
-<% @articles.each do |article| %>
-
-<h4><%= link_to article.title , article_path(article) %></h4>
-<h5><%= article.content.to_s[0,120]+"..."%></h5>
-<p class="page-header">发表于 <%= time_ago_in_words(article.created_at) %> 前.</p>
-
-<% end %>
+	<% @articles.each do |article| %>
+		<h4><%= link_to article.title , article_path(article) %></h4>
+		<h5><%= article.content.to_s[0,220]+"......"%><%= link_to "[ 阅读全文 ]",article_path(article) %></h5>
+		<p class="page-header">
+			<span class="label label-default">发表于 <%= time_ago_in_words(article.created_at)%> 前.</span> &nbsp;&nbsp;
+			<span class="label label-info">修改于 <%= time_ago_in_words(article.updated_at)%> 前.</span>
+		</p>
+	<% end %>
 </div>
-
 </div>
+<div class="will_paginate"><%= will_paginate %></div>
+
+

@@ -1,9 +1,9 @@
 class ArticlesController < ApplicationController
 	before_action :signed_in_user , only: [:new,:edit,:update,:create,:destroy]
 	def index
-		@articles = Article.order(created_at: :desc)
+		@articles = Article.paginate(:page => params[:page],:per_page => 8)
 	end
-		
+	
 	def show
 		@article = Article.find(params[:id])
 		@comment = Comment.create
