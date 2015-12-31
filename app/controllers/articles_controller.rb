@@ -24,8 +24,7 @@ class ArticlesController < ApplicationController
 	
 	def create
 		@article = Article.new(params_article)
-		if @article.save
-			
+		if @article.save		
 		   redirect_to articles_path	   
 		else
 
@@ -50,28 +49,28 @@ class ArticlesController < ApplicationController
   end
   
   #支持markdown
-	 # Prevent CSRF attacks by raising an exception.
- # For APIs, you may want to use :null_session instead.
- protect_from_forgery with: :exception
+	# Prevent CSRF attacks by raising an exception.
+ 	# For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :exception
 
- helper_method [:markdown]
+  helper_method [:markdown]
 
- # Highlight code with Pygments
- class HTMLwithPygments < Redcarpet::Render::HTML
-  def block_code(code, language)
-   language = "text" if language.blank?
-   sha = Digest::SHA1.hexdigest(code)
-   Rails.cache.fetch ["code", language, sha].join("-") do
-    Pygments.highlight(code, :lexer => language)
-   end
+  # Highlight code with Pygments
+  class HTMLwithPygments < Redcarpet::Render::HTML
+ 		def block_code(code, language)
+    language = "text" if language.blank?
+    sha = Digest::SHA1.hexdigest(code)
+    Rails.cache.fetch ["code", language, sha].join("-") do
+    	Pygments.highlight(code, :lexer => language)
+    end
+  	end
   end
- end
 
- protected
+  protected
 
- # Markdown with Redcarpet
- def markdown(text)
-  renderer = HTMLwithPygments.new({
+  # Markdown with Redcarpet
+  def markdown(text)
+ 	 renderer = HTMLwithPygments.new({
    :filter_html => true,
    :hard_wrap => true,
    :link_attributes => {:rel => 'external nofollow'}

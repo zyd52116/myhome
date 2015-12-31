@@ -1,5 +1,5 @@
 <div class="col-md-12">
-<%= form_for @comment do |f| %>
+	<%= form_for @comment, :remote => true do |f| %>
 	<%= f.text_area :content ,class: "form-control ",rows:"3",placeholder: "请输入评论内容"%>
 	</br>
 
@@ -7,6 +7,6 @@
 	</br>
 	<%= f.text_field :article_id,type:"hidden" ,value:@article.id%>
 
-	<%= f.submit "发表评论" ,class: "btn-primary btn btn-default"%>
-<% end %>
+	<%= f.submit "发表评论" ,class: "btn-primary btn btn-default", :data => { :"disable-with" => "正在处理..."} %>
+	<% end %>
 </div>

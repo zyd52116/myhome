@@ -1,24 +1,23 @@
 <h1>后台管理员登录</h1>
 
 <div class="row">
-<div class="col-md-5"></div>
-<div class="col-md-6">
-<%= form_for(:session, url: admin_sessions_path) do |f| %>
-	<%= f.label :name, "用户名" %>
-	<div>
-	<%= f.text_field :name %>
-	</div>
+	<div class="col-md-5"></div>
+	<div class="col-md-6">
+		<%= form_for(:session, url: admin_sessions_path) do |f| %>
+		<%= f.label :name, "用户名" %>
+		<div>
+			<%= f.text_field :name %>
+		</div>
 	
-	<%= f.label :password, "密码"%>
-	<div>
-	<%= f.password_field :password %>
-	</div>
+		<%= f.label :password, "密码"%>
+		<div>
+			<%= f.password_field :password %>
+		</div>
 	</br>
-	<%= f.submit "登录"%>
-	
+	<%= f.submit "登录",class: "btn btn-parimary"%>	
 	<% end %>
 	</br>
-
+	
 	<%= link_to "返回首页", root_path %>
 	</div>
 	<div class="col-md-1"></div>

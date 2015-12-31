@@ -5,22 +5,22 @@
 	
 	<% if signed_in? %>
 		<%= link_to "修改文章", edit_article_path ,class: "btn-sm btn-primary " %>
-		<%= link_to "删除文章", article_path,method: "delete", class: "btn-sm btn-primary ",
-				data: { confirm: "你确定要删除这篇文章吗？" } %>
+		<%= link_to "删除文章", article_path,method: "delete", class: "btn-sm btn-primary " %>
 	<% end %>
 		
 	<div class="row">		
 		<div class="col-md-12">
 		<% if @article.comments.any? %>
 		</br>
-		<p class="panel panel-default">共收到<%= @article.comments.count %>条评论</p>
-			<%= render "comment" %>
+		<p class="panel panel-default" ,id="comment_counts">共收到<%= @article.comments.count %>条评论</p>
+			
+			<div id="article_comment"><%= render "comments/comment" %> </div>
 		<% end %>
 		</div>
 	</div> 
 	
 	<div class = "row">
-		<%= render 'new_comment' %>
+		<%= render 'comments/new_comment' %>
 	</div>
 
 </div>

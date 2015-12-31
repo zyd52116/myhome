@@ -3,10 +3,20 @@ class CommentsController < ApplicationController
 	def create
 		@comment = Comment.create(comment_params)	
 		@article = Article.find(@comment.article_id)
-		 if @comment.save
-				redirect_to article_path(@article)
+		respond_to do |format|
+			if @comment.save
+		 		#redirect_to article_path(@article)  改用ujs动态刷新
+		 		format.html {}
+		 		format.js
+		 		#format.js	{ render :layout => false }
+		 		#format.json { render :json => article_path(@article) }
 			else
-				redirect_to article_path(@article)
+				#redirect_to article_path(@article)   改用ujs动态刷新
+				format.html { render :new }
+				
+				#format.js { render :layout => false, :status => 406 }
+				#format.json { render :json => {:error => @article.errors.full_messages.jion('.')} }	
+			end			
 			end
 	end
 	
@@ -19,7 +29,9 @@ class CommentsController < ApplicationController
 			redirect_to article_path(@article)
 		end
 	end
+	
 	private 
+	
 	def comment_params
 		params.require(:comment).permit(:email,:content,:article_id)
 	end

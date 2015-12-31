@@ -11,7 +11,7 @@
 	<%= f.text_area :content ,class: "form-control",rows:"13"%>
 	
 	</br>
-	<%= f.submit "更 新",class: "btn-primary btn btn-default"%>
+	<%= f.submit "更 新",class: "btn-primary btn btn-default", :data => { :"disable-with" => "正在处理..."}%>
 	</div>
 <% end %>
 </div>
