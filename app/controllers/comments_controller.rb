@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 		respond_to do |format|
 			if @comment.save
 		 		#redirect_to article_path(@article)  改用ujs动态刷新
-		 		format.html {}
+		 		format.html { redirect_to article_path(@article) }
 		 		format.js
 		 		#format.js	{ render :layout => false }
 		 		#format.json { render :json => article_path(@article) }

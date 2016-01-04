@@ -1,3 +1,4 @@
+<p class="panel panel-default" ,id="comment_counts">共收到<%= @article.comments.count %>条评论</p>
 <% @article.comments.each do |f|%>
 	<% if signed_in? %>
 	<div class="col-md-11">		
