@@ -1,6 +1,0 @@
-<% if @comment.errors.empty? %>
-  $('#article_comment').html($('<%= j(render :partial => 'comment', :object => @comment) %>'));
-
-<% else %>
-  alert('@comment.errors.full_messages.join(',')');
-<% end %>
